@@ -1712,4 +1712,8 @@ npm run dev
 - instead of index.js, need to use main.jsx
 - to spin up dev server - "npm run dev"
 
+<<<<<<< HEAD
 - rest the same - imports/exports, deployment, assets, etc...
+=======
+- rest the same - imports/exports, deployment, assets, etc...
+>>>>>>> 5e7c0fca52aee56b47014b115a5018e2209077cf

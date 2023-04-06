@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 // React Component Basic Rules
-// start with capital letter
+// function name starts with capital letter
 // must return JSX (html)
 // always close tag
 
