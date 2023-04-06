@@ -1,4 +1,4 @@
-# React Fundamentals - Take from John Smilga's react tutorial (john-smilga/react-course-v3/01-fundamentals/README.md)
+# React Fundamentals - Taken from John Smilga's react tutorial (john-smilga/react-course-v3/01-fundamentals/README.md)
 
 #### React Course
 
