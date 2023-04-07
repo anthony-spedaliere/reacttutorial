@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import './index.css';
+
 // React Component Basic Rules
 // function name starts with capital letter
 // must return JSX (html) - only one parent element (cannot return adjacent elements). React.Fragment can be used or <> </>
@@ -10,7 +12,7 @@ import ReactDOM from 'react-dom/client';
 // Javascript entry point - connects the index.js root to the public index.html entry point root
 function BookList() {
     return (
-        <section>
+        <section className='booklist'>
             <Book />
             <Book />
             <Book />
@@ -21,7 +23,7 @@ function BookList() {
 
 const Book = () => {
     return (
-        <article>
+        <article className='book'>
             <Image />
             <Title />
             <Author />
