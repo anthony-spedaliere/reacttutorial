@@ -8,10 +8,31 @@ import ReactDOM from 'react-dom/client';
 // always close tag
 
 // Javascript entry point - connects the index.js root to the public index.html entry point root
-function App() {
-    return (<h2>React Tutorial</h2>);
+function BookList() {
+    return (
+        <section>
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+        </section>
+    );
 }
+
+const Book = () => {
+    return (
+        <article>
+            <Image />
+            <Title />
+            <Author />
+        </article>
+    );
+}
+
+const Image = () => <img src='https://images-na.ssl-images-amazon.com/images/I/810bsxh1MmL._AC_UL600_SR600,400_.jpg' />;
+const Title = () => <h2>Title: How to Catch the Easter Bunny</h2>;
+const Author = () => <h2>By: Adam Wallace (Author) and Andy Elkerton (Illustrator)</h2>;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<App />);
+root.render(< BookList />);
