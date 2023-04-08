@@ -13,7 +13,7 @@ const books = [
         id : 0,
         imageURL: 'https://images-na.ssl-images-amazon.com/images/I/810bsxh1MmL._AC_UL600_SR600,400_.jpg',
         title : 'How to Catch the Easter Bunny',
-        Author: 'Adam Wallace (Author) and Andy Elkerton (Illustrator)'
+        author: 'Adam Wallace (Author) and Andy Elkerton (Illustrator)'
     },
     {
         id : 1,
@@ -39,24 +39,21 @@ const books = [
 function BookList() {
     return (
         <section className='booklist'>
-            <Book />
-            <Book />
-            <Book />
-            <Book />
+            <Book imageURL = {books[0].imageURL} author={books[0].author} title={books[0].title}/>
+            <Book imageURL = {books[1].imageURL} author={books[1].author} title={books[1].title}/>
+            <Book imageURL = {books[2].imageURL} author={books[2].author} title={books[2].title}/>
+            <Book imageURL = {books[3].imageURL} author={books[3].author} title={books[3].title}/>
         </section>
     );
 }
 
-const Book = () => {
-    const imageURL = 'https://images-na.ssl-images-amazon.com/images/I/810bsxh1MmL._AC_UL600_SR600,400_.jpg'
-    const bookTitle = 'How to Catch the Easter Bunny'
-    const bookAuthor = 'Adam Wallace (Author) and Andy Elkerton (Illustrator)'
-
+const Book = (props) => {
+    
     return (
         <article className='book'>
-            <img src= {imageURL}/>
-            <h2>Title: {bookTitle}</h2>
-            <h4>By: {bookAuthor}</h4>
+            <img src= {props.imageURL} alt={props.title}/>
+            <h2>Title: {props.title}</h2>
+            <h4>By: {props.author}</h4>
         </article>
     );
 }
