@@ -39,25 +39,29 @@ const books = [
 function BookList() {
     return (
         <section className='booklist'>
-            <Book imageURL = {books[0].imageURL} author={books[0].author} title={books[0].title}/>
-            <Book imageURL = {books[1].imageURL} author={books[1].author} title={books[1].title}/>
-            <Book imageURL = {books[2].imageURL} author={books[2].author} title={books[2].title}/>
-            <Book imageURL = {books[3].imageURL} author={books[3].author} title={books[3].title}/>
+            {books.map((book) => {
+                return <Book imageURL = {book.imageURL} author={book.author} title={book.title}/>
+            })}
         </section>
     );
 }
 
 const Book = (props) => {
-    const { imageURL, title, author } = props;
-    
+    const { imageURL, title, author, children } = props;
+
     return (
         <article className='book'>
             <img src= {imageURL} alt={title}/>
             <h2>Title: {title}</h2>
             <h4>By: {author}</h4>
+            {children}
         </article>
     );
 }
+// use map method to iterate over the books list of objects to set the props
+// const book = books.map((book) => {
+//     return <Book imageURL = {book.imageURL} author={book.author} title={book.title}/>
+// })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
