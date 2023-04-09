@@ -40,7 +40,7 @@ function BookList() {
     return (
         <section className='booklist'>
             {books.map((book) => {
-                return <Book imageURL = {book.imageURL} author={book.author} title={book.title}/>
+                return <Book imageURL = {book.imageURL} author={book.author} title={book.title} key={book.id}/>
             })}
         </section>
     );
@@ -58,10 +58,6 @@ const Book = (props) => {
         </article>
     );
 }
-// use map method to iterate over the books list of objects to set the props
-// const book = books.map((book) => {
-//     return <Book imageURL = {book.imageURL} author={book.author} title={book.title}/>
-// })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
