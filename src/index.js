@@ -40,7 +40,7 @@ function BookList() {
     return (
         <section className='booklist'>
             {books.map((book) => {
-                return <Book imageURL = {book.imageURL} author={book.author} title={book.title} key={book.id}/>
+                return <Book {...book} key={book.id}/>
             })}
         </section>
     );
