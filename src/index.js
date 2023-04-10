@@ -38,46 +38,11 @@ const books = [
 // Javascript entry point - connects the index.js root to the public index.html entry point root
 function BookList() {
     return (
-        <section className='booklist'>
-            <EventExamples/>
+        <section className='booklist'>            
             {books.map((book) => {
                 return <Book {...book} key={book.id}/>
             })}
         </section>
-    );
-}
-
-const EventExamples = (props) => {
-    const handleFormInput = (e) => {
-        console.log(e);
-    }
-
-    const handleButtonClick = (e) => {
-        console.log(e);
-    }
-
-    const handleFormSubmission = (e) => {
-        e.preventDefault();
-        console.log('Form submitted');
-    }
-
-    return (    
-        <section>
-            <form onSubmit={handleFormSubmission}>
-                <h2>Typical Form</h2>
-                <input 
-                    type='text' 
-                    name='example' 
-                    onChange={handleFormInput}
-                    style={{margin: '1rem 0'}}
-                />
-                <button type='submit'>Submit</button>
-            </form>
-            <div>
-                <button onClick={handleButtonClick}>click me</button>
-            </div>
-            
-        </section>    
     );
 }
 
