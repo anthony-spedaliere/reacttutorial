@@ -37,23 +37,29 @@ const books = [
 
 // Javascript entry point - connects the index.js root to the public index.html entry point root
 function BookList() {
+
+    const getBook = (bookId) => {
+        console.log(books.find((book) => book.id === bookId));
+    }
+
     return (
         <section className='booklist'>            
             {books.map((book) => {
-                return <Book {...book} key={book.id}/>
+                return <Book {...book} getBook = {getBook} key={book.id}/>
             })}
         </section>
     );
 }
 
 const Book = (props) => {
-    const { imageURL, title, author, children } = props;
+    const { imageURL, title, author, children, id, getBook } = props;
 
     return (
         <article className='book'>
             <img src= {imageURL} alt={title}/>
-            <h2>Title: {title}</h2>
+            <h2>Title: {title}</h2>            
             <h4>By: {author}</h4>
+            <button onClick={() => getBook(id)}>Click</button>
             {children}
         </article>
     );
