@@ -6,10 +6,6 @@ import Book from './Book';
 
 // resources
 import {books} from './books.js';
-import img1 from './images/book-1.jpg';
-import img2 from './images/book-2.jpg';
-import img3 from './images/book-3.jpg';
-import img4 from './images/book-4.jpg';
 
 // styling
 import './index.css';
@@ -28,11 +24,14 @@ function BookList() {
     }
 
     return (
-        <section className='booklist'>            
-            {books.map((book) => {
-                return <Book {...book} getBook = {getBook} key={book.id}/>
-            })}
-        </section>
+        <>
+            <h1>Amazon Best Sellers</h1>
+            <section className='booklist'>                          
+                {books.map((book, index) => {                
+                    return <Book {...book} getBook = {getBook} index={index} key={book.id}/>
+                })}
+            </section>
+        </>
     );
 }
 
