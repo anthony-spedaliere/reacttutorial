@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+// components
+import Book from './Book';
+
+// data
+import {books} from './books.js';
+
+// styling
 import './index.css';
 
 // React Component Basic Rules
@@ -8,38 +15,12 @@ import './index.css';
 // must return JSX (html) - only one parent element (cannot return adjacent elements). React.Fragment can be used or <> </>
 // always close tag
 
-const books = [
-    {
-        id : 0,
-        imageURL: 'https://images-na.ssl-images-amazon.com/images/I/810bsxh1MmL._AC_UL600_SR600,400_.jpg',
-        title : 'How to Catch the Easter Bunny',
-        author: 'Adam Wallace (Author) and Andy Elkerton (Illustrator)'
-    },
-    {
-        id : 1,
-        imageURL: 'https://images-na.ssl-images-amazon.com/images/I/81fyoFoaxlL._AC_UL600_SR600,400_.jpg',
-        title : 'Dog Man: Twenty Thousand Fleas Under the Sea: A Graphic Novel (Dog Man #11): From the Creator of Captain Underpants',
-        author: 'Dave Pilkey'
-    },
-    {
-        id : 2,
-        imageURL: 'https://images-na.ssl-images-amazon.com/images/I/913UqrSJf6L._AC_UL600_SR600,400_.jpg',
-        title : 'The Return of the Gods',
-        author: 'Jonathan Cahn'
-    },
-    {
-        id : 3,
-        imageURL: 'https://images-na.ssl-images-amazon.com/images/I/61RnYtO-QUL._AC_UL600_SR600,400_.jpg',
-        title : 'Got Your Number: The Greatest Sports Legends and the Numbers They Own',
-        author: 'Mike Greenberg'
-    },
-]
-
 // Javascript entry point - connects the index.js root to the public index.html entry point root
 function BookList() {
 
     const getBook = (bookId) => {
-        console.log(books.find((book) => book.id === bookId));
+        const book = books.find((book) => book.id === bookId);
+        console.log(book);
     }
 
     return (
@@ -48,20 +29,6 @@ function BookList() {
                 return <Book {...book} getBook = {getBook} key={book.id}/>
             })}
         </section>
-    );
-}
-
-const Book = (props) => {
-    const { imageURL, title, author, children, id, getBook } = props;
-
-    return (
-        <article className='book'>
-            <img src= {imageURL} alt={title}/>
-            <h2>Title: {title}</h2>            
-            <h4>By: {author}</h4>
-            <button onClick={() => getBook(id)}>Click</button>
-            {children}
-        </article>
     );
 }
 
